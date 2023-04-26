@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const UserSchema= new Schema({
+
+const NotesSchema= new Schema({
+    user: {
+type:mongoose.Schema.Types.ObjectId ,// here we are associating user with particular notes
+   ref:'user'
+},
     title:{
         type:String,
         required:true
