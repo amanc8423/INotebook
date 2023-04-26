@@ -13,10 +13,11 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzMWRjNWUzZTQwMzdjZDQ3MzRhMDY2In0sImlhdCI6MTYzMDY2OTU5Nn0.hJS0hx6I7ROugkqjL2CjrJuefA3pJi-IU5yGUbRHI4Q"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
       }
     });
     const json = await response.json() 
+    console.log(json);
     setNotes(json)
   }
 
@@ -28,7 +29,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzMWRjNWUzZTQwMzdjZDQ3MzRhMDY2In0sImlhdCI6MTYzMDY2OTU5Nn0.hJS0hx6I7ROugkqjL2CjrJuefA3pJi-IU5yGUbRHI4Q"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
       },
       body: JSON.stringify({title, description, tag})
     });
@@ -44,7 +45,7 @@ const NoteState = (props) => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzMWRjNWUzZTQwMzdjZDQ3MzRhMDY2In0sImlhdCI6MTYzMDY2OTU5Nn0.hJS0hx6I7ROugkqjL2CjrJuefA3pJi-IU5yGUbRHI4Q"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
       }
     });
     const json = response.json(); 
@@ -59,7 +60,7 @@ const NoteState = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjEzMWRjNWUzZTQwMzdjZDQ3MzRhMDY2In0sImlhdCI6MTYzMDY2OTU5Nn0.hJS0hx6I7ROugkqjL2CjrJuefA3pJi-IU5yGUbRHI4Q"
+        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
       },
       body: JSON.stringify({title, description, tag})
     });

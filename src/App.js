@@ -1,7 +1,7 @@
 import './App.css';
 import {
-  BrowserRouter as Router,
-  Switch,
+ BrowserRouter as Router,
+  Routes,
   Route
 } from "react-router-dom";
 import Navbar from './components/Navbar';
@@ -20,20 +20,20 @@ function App() {
           <Navbar />
           <Alert message="This is amazing React course" />
           <div className="container">
-            <Switch>
-              <Route exact path="/">
-                <Home />
+            <Routes>
+              <Route exact path="/" element=<Home/>>
+                {/* <Home /> */}
               </Route>
-              <Route exact path="/about">
-                <About />
+              <Route exact path="/about" element=<About/> >
+                {/* <About /> */}
               </Route>
-              <Route exact path="/login">
-                <Login />
+              <Route exact path="/login" element=<Login/>>
+                {/* <Login /> */}
               </Route>
-              <Route exact path="/signup">
-                <Signup />
+              <Route exact path="/signup" element=<Signup/>>
+                {/* <Signup /> */}
               </Route>
-            </Switch>
+            </Routes>
           </div>
         </Router>
       </NoteState>
