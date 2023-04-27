@@ -13,7 +13,7 @@ const NoteState = (props) => {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
+        "auth-token": localStorage.getItem('token')
       }
     });
     const json = await response.json() 
@@ -29,7 +29,7 @@ const NoteState = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
+        "auth-token": localStorage.getItem('token')
       },
       body: JSON.stringify({title, description, tag})
     });
@@ -45,7 +45,7 @@ const NoteState = (props) => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
+        "auth-token": localStorage.getItem('token')
       }
     });
     const json = response.json(); 
@@ -60,11 +60,12 @@ const NoteState = (props) => {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjQ0ODAzNzZmYzE4ZjY2Yzc1ZWU1ZWRkIn0sImlhdCI6MTY4MjUwMjg1OH0.g9564KR4ac8IeSei0Onw1Ih62X0lTtS4cIs5JIcyHN4"
+        "auth-token": localStorage.getItem('token')
       },
       body: JSON.stringify({title, description, tag})
     });
     const json = await response.json(); 
+
 
      let newNotes = JSON.parse(JSON.stringify(notes))
     // Logic to edit in client
@@ -73,10 +74,10 @@ const NoteState = (props) => {
       if (element._id === id) {
         newNotes[index].title = title;
         newNotes[index].description = description;
-        newNotes[index].tag = tag; 
+        newNotes[index].tag = tag; }
         break; 
       }
-    }  
+     
     setNotes(newNotes);
   }
 
